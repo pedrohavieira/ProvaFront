@@ -54,4 +54,22 @@ document.getElementById("cep").addEventListener("blur", async function () {
       alert("CEP inválido ou não encontrado.");
     }
   });
+  function exibirNecessidades(lista) {
+    const container = document.getElementById("listaNecessidades");
+    container.innerHTML = "";
+  
+    lista.forEach(n => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${n.titulo}</h3>
+        <p><strong>Instituição:</strong> ${n.instituicao}</p>
+        <p><strong>Tipo de Ajuda:</strong> ${n.tipoAjuda}</p>
+        <p>${n.descricao}</p>
+        <p><strong>Endereço:</strong> ${n.rua}, ${n.bairro} - ${n.cidade}/${n.estado}</p>
+        <p><strong>Contato:</strong> ${n.contato}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
   
