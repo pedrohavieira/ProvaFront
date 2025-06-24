@@ -15,4 +15,36 @@
           <button data-page="visualizar">Visualizar</button>
         </nav>
       </header>
+      <main class="container">
+        <!-- Página Home -->
+        <section id="home" class="page active">
+          <h2>Bem-vindo à Plataforma</h2>
+          <p>Conectamos ONGs a voluntários de forma simples, rápida e eficiente.</p>
+        </section>
+    
+        <!-- Página Cadastro -->
+        <section id="cadastro" class="page">
+          <h2>Cadastrar Necessidade</h2>
+          <form id="formulario">
+            <input type="text" id="instituicao" placeholder="Nome da Instituição" required />
+            <select id="tipoAjuda" required>
+              <option value="">Selecione o tipo de ajuda</option>
+              <option value="Educação">Educação</option>
+              <option value="Saúde">Saúde</option>
+              <option value="Meio Ambiente">Meio Ambiente</option>
+              <option value="Doação de Alimentos">Doação de Alimentos</option>
+              <option value="Doação de Roupas">Doação de Roupas</option>
+              <option value="Outros">Outros</option>
+            </select>
+            <input type="text" id="titulo" placeholder="Título da Necessidade" required />
+            <textarea id="descricao" placeholder="Descrição detalhada" required></textarea>
+            <input type="text" id="cep" placeholder="CEP" required />
+            <input type="text" id="rua" placeholder="Rua" disabled />
+            <input type="text" id="bairro" placeholder="Bairro" disabled />
+            <input type="text" id="cidade" placeholder="Cidade" disabled />
+            <input type="text" id="estado" placeholder="Estado" disabled />
+            <input type="text" id="contato" placeholder="Contato (e-mail ou telefone)" required />
+            <button type="submit">Cadastrar</button>
+          </form>
+        </section>
     
