@@ -72,4 +72,18 @@ document.getElementById("cep").addEventListener("blur", async function () {
       container.appendChild(card);
     });
   }
-  
+  document.getElementById("busca").addEventListener("input", aplicarFiltros);
+document.getElementById("filtroTipo").addEventListener("change", aplicarFiltros);
+
+function aplicarFiltros() {
+  const busca = document.getElementById("busca").value.toLowerCase();
+  const tipo = document.getElementById("filtroTipo").value;
+
+  const filtradas = necessidades.filter(n => {
+    const matchBusca = n.titulo.toLowerCase().includes(busca) || n.descricao.toLowerCase().includes(busca);
+    const matchTipo = !tipo || n.tipoAjuda === tipo;
+    return matchBusca && matchTipo;
+  });
+
+  exibirNecessidades(filtradas);
+}
